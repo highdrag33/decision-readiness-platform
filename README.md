@@ -1,6 +1,6 @@
 # Decision Readiness Platform
 
-An exploratory data engineering project investigating how public weather data
+An exploratory data engineering project investigating how North Carolina public weather data
 and synthetic emergency-logistics data can support regional supply-risk decisions.
 
 ## Status

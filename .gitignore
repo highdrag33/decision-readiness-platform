@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
+dist/
+build/
+
+# Virtual environments
+.venv/
+venv/
+
+# Environment configuration
+.env
+.env.*
+!.env.example
+
+# Runtime data
+data/raw/*
+data/curated/*
+!data/raw/.gitkeep
+!data/curated/.gitkeep
+
+# Local databases
+*.duckdb
+*.duckdb.wal
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store

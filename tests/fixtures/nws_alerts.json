@@ -1,0 +1,20 @@
+{
+  "@context": [],
+  "type": "FeatureCollection",
+  "features": [
+    {
+      "id": "https://api.weather.gov/alerts/example-alert",
+      "type": "Feature",
+      "geometry": null,
+      "properties": {
+        "event": "Flood Warning",
+        "severity": "Severe",
+        "certainty": "Likely",
+        "urgency": "Immediate",
+        "areaDesc": "Example County",
+        "effective": "2026-08-09T12:00:00-04:00",
+        "expires": "2026-08-09T18:00:00-04:00"
+      }
+    }
+  ]
+}

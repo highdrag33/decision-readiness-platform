@@ -15,8 +15,7 @@ def load_settings() -> Settings:
 
     if not user_agent:
         raise ValueError(
-            "NWS_USER_AGENT is required. "
-            "Set it to an application name and contact address."
+            "NWS_USER_AGENT is required. Set it to an application name and contact address."
         )
 
     return Settings(

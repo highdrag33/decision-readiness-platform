@@ -1,4 +1,4 @@
-from typing import Any
+from typing import Any, Self
 
 import httpx
 
@@ -10,6 +10,7 @@ class NWSClient:
         self,
         user_agent: str,
         timeout_seconds: float = 30.0,
+        transport: httpx.BaseTransport | None = None,
     ) -> None:
         self._client = httpx.Client(
             base_url=self.BASE_URL,
@@ -18,6 +19,7 @@ class NWSClient:
                 "Accept": "application/geo+json",
             },
             timeout=timeout_seconds,
+            transport=transport,
         )
 
     def get_active_alerts(self, area: str) -> dict[str, Any]:
@@ -31,7 +33,7 @@ class NWSClient:
     def close(self) -> None:
         self._client.close()
 
-    def __enter__(self) -> "NWSClient":
+    def __enter__(self) -> Self:
         return self
 
     def __exit__(self, *args: object) -> None:

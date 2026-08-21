@@ -157,11 +157,11 @@ python -m decision_readiness.pipelines.ingest_nws_alerts
 
 ### `tests/fixtures/nws_alerts.json`
 
-Reserved for a small, stable example of an NWS response. A fixture lets tests exercise realistic data without depending on live network access or current weather. It is currently empty and must be populated before it is useful.
+Contains a small, stable example of an NWS response. The fixture lets tests exercise realistic data without depending on live network access or current weather.
 
 ### `tests/test_nws_clients.py`
 
-Reserved for automated tests of `NWSClient`. It is currently empty, so pytest correctly reports that no tests ran. The first tests should use a mocked HTTP transport to verify successful decoding, request parameters, and error handling without calling the real NWS service.
+Contains automated tests of `NWSClient`. A mocked HTTP transport verifies request construction, successful decoding, and error handling without calling the real NWS service.
 
 ## Local generated content
 
@@ -190,14 +190,18 @@ Completed:
 - Timestamped raw-response ingestion
 - Editable command-line entry point
 - Generated-file ignore rules
-
-Not yet completed:
-
-- Automated tests and populated test fixture
-- Source-data profiling documentation
 - Validated alert data model
 - Raw-to-curated transformation
 - DuckDB storage
 - Synthetic logistics data
 - Geographic joins and decision metrics
+- Automated unit, transformation, filesystem, and end-to-end tests
+- GitHub Actions quality workflow
 
+Potential future extensions:
+
+- Historical incremental loading rather than snapshot rebuilding
+- Census population-exposure data
+- Orchestration and operational monitoring
+- An API and TypeScript dashboard
+- Optimization and uncertainty analysis

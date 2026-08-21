@@ -8,6 +8,8 @@ class Settings:
     nws_user_agent: str
     nws_area: str
     raw_data_dir: Path
+    curated_data_dir: Path
+    facilities_path: Path
 
 
 def load_settings() -> Settings:
@@ -22,4 +24,6 @@ def load_settings() -> Settings:
         nws_user_agent=user_agent,
         nws_area=os.getenv("NWS_AREA", "NC"),
         raw_data_dir=Path(os.getenv("RAW_DATA_DIR", "data/raw")),
+        curated_data_dir=Path(os.getenv("CURATED_DATA_DIR", "data/curated")),
+        facilities_path=Path(os.getenv("FACILITIES_PATH", "data/sample/facilities.csv")),
     )

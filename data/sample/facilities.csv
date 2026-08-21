@@ -1,0 +1,6 @@
+facility_id,name,county_fips,resource_type,on_hand_units,daily_demand_units,safety_stock_days
+FAC-001,Raleigh Regional Hub,37183,water_cases,900,250,5
+FAC-002,Henderson Distribution Point,37181,water_cases,450,150,4
+FAC-003,Wilmington Coastal Depot,37129,water_cases,300,125,4
+FAC-004,Morganton Support Center,37023,water_cases,800,120,4
+FAC-005,Charlotte Logistics Hub,37119,water_cases,2000,300,4

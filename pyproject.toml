@@ -8,6 +8,7 @@ version = "0.1.0"
 description = "A public-data platform for emergency logistics decision support."
 requires-python = ">=3.11"
 dependencies = [
+    "duckdb>=1.3,<2",
     "httpx>=0.28,<1",
 ]
 
@@ -19,6 +20,7 @@ dev = [
 
 [project.scripts]
 ingest-nws-alerts = "decision_readiness.pipelines.ingest_nws_alerts:main"
+build-decision-readiness = "decision_readiness.pipelines.build_mvp:main"
 
 [tool.setuptools.packages.find]
 where = ["src"]

@@ -6,7 +6,6 @@ import pytest
 
 from decision_readiness.clients.nws import NWSClient
 
-
 FIXTURE_PATH = Path(__file__).parent / "fixtures" / "nws_alerts.json"
 
 
@@ -16,7 +15,7 @@ def load_alert_fixture() -> dict:
 
 
 def test_get_active_alerts_builds_request_and_returns_json() -> None:
-   
+
     expected_payload = load_alert_fixture()
 
     def handle_request(request: httpx.Request) -> httpx.Response:
@@ -49,10 +48,13 @@ def test_get_active_alerts_raises_for_unsuccessful_response() -> None:
 
     transport = httpx.MockTransport(handle_request)
 
-    with NWSClient(
-        user_agent="decision-readiness-platform test@example.com",
-        transport=transport,
-    ) as client, pytest.raises(httpx.HTTPStatusError) as error:
+    with (
+        NWSClient(
+            user_agent="decision-readiness-platform test@example.com",
+            transport=transport,
+        ) as client,
+        pytest.raises(httpx.HTTPStatusError) as error,
+    ):
         client.get_active_alerts("NC")
 
     assert error.value.response.status_code == 503
